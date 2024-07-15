@@ -1,0 +1,210 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #e9aaaa;
+  color: #333;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.header.light {
+  background-color: #e9aaaa;
+  color: #333;
+}
+
+.header.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+
+.all-songs,
+.song-card,
+.playlist {
+  width: 30%;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #87ceeb; /* Sky blue color */
+  height: 100vh;
+  overflow-y: auto;
+  color: #333;
+}
+
+.all-songs.dark,
+.song-card.dark,
+.playlist.dark {
+  background-color: #212123; /* Dark blue color */
+  color: #fff;
+}
+
+.song-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.song-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+h2,
+h3 {
+  margin-top: 0;
+}
+
+#songsList,
+#playlistsList,
+#currentPlaylistSongs {
+  list-style-type: none;
+  padding: 0;
+}
+
+#songsList li,
+#playlistsList li,
+#currentPlaylistSongs li {
+  padding: 10px;
+  margin: 5px 0;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+}
+
+#songsList li:hover,
+#playlistsList li:hover,
+#currentPlaylistSongs li:hover {
+  background-color: #e9ecef;
+}
+
+#songsList li.dark,
+#playlistsList li.dark,
+#currentPlaylistSongs li.dark {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+#songsList li.dark:hover,
+#playlistsList li.dark:hover,
+#currentPlaylistSongs li.dark:hover {
+  background-color: #555;
+}
+
+.controls-container {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toggle-input {
+  display: none;
+}
+
+.toggle-label {
+  display: block;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-label::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.toggle-input:checked + .toggle-label::before {
+  transform: translateX(30px);
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 5%;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#searchInput {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Add this CSS to improve search results visibility in dark mode */
+.search-results {
+  list-style-type: none;
+  padding: 0;
+  position: absolute;
+  background-color: #333; /* Dark background color */
+  /* border: 1px solid #555; */
+  border-radius: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  margin: 0;
+  width: 200px;
+  top: calc(80% + 0px); /* Adjust position */
+  z-index: 1000;
+  color: #fff; /* Text color in dark mode */
+}
+
+.search-results li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #555; /* Border color for each result */
+}
+
+.search-results li:last-child {
+  border-bottom: none; /* Remove border from last result */
+}
+
+.search-results li:hover {
+  background-color: #555; /* Darker background color on hover */
+}
+
