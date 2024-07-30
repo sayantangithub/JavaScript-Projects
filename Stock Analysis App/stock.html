@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Market Application</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="chart-and-stock-container">
+        <div id="chart-container">
+          <h2>Stock Chart</h2>
+          <div id="chart-options">
+            <button id="btn1d">1 Day</button>
+            <button id="btn1mo">1 Month</button>
+            <button id="btn1y">1 Year</button>
+            <button id="btn5y">5 Years</button>
+          </div>
+          <canvas id="chartCanvas" width="800" height="400"></canvas>
+          <div id="tooltip"></div>
+          <div id="xAxisLabel"></div>
+        </div>
+        <div id="stock-list-container">
+          <h2>Stock List</h2>
+          <div id="stock-list"></div>
+        </div>
+      </div>
+      <div id="details-container">
+        <h2>Stock Details</h2>
+        <div id="details">
+          <div><strong>Name:</strong> <span id="name"></span></div>
+          <div><strong>Profit:</strong> <span id="profit"></span></div>
+          <div><strong>Book Value:</strong> <span id="bookValue"></span></div>
+          <div><strong>Summary:</strong> <span id="summaryText"></span></div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

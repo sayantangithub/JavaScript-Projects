@@ -1,0 +1,109 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a2e;
+  color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 20px;
+  background-color: #16213e;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#chart-and-stock-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #16213e;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+#chart-container,
+#stock-list-container {
+  flex: 1;
+  margin-right: 20px;
+}
+
+#stock-list-container {
+  max-width: 300px;
+  margin-right: 0;
+}
+
+#stock-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stock-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #0f3460;
+  border-radius: 5px;
+}
+
+.stock-name {
+  cursor: pointer;
+  color: #00aaff;
+  font-weight: bold;
+}
+
+#chartCanvas {
+  border: 1px solid #ccc;
+  background-color: #0f3460;
+  border-radius: 5px;
+}
+
+#tooltip,
+#xAxisLabel {
+  position: absolute;
+  background-color: #0f3460;
+  border: 1px solid #ccc;
+  padding: 5px;
+  display: none;
+  color: #f4f4f4;
+}
+
+#tooltip {
+  z-index: 10;
+}
+
+#xAxisLabel {
+  transform: translateX(-50%);
+}
+
+#details-container {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #16213e;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+button {
+  background-color: #0f3460;
+  color: #f4f4f4;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00aaff;
+}
