@@ -5,6 +5,7 @@
 - BMI Calculator
 - Digital Clock
 - Blog Page App
+- Guess the Number
 ### Intermediate Projects
 - Quiz Game App
 - Emoji Guessing Game
