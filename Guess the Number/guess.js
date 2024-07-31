@@ -1,45 +1,91 @@
-//The following code will generate a random number from 0 to 1.
-const randomNumber = parseInt(Math.random() * 100 + 1);
+let randomNumber = parseInt(Math.random() * 100 + 1);
 
-//Accessing HTML Elements
 const submit = document.querySelector("#subt");
 const userInput = document.querySelector("#guessField");
 const guessSlot = document.querySelector(".guesses");
-const remainning = document.querySelector(".lastResult");
+const remaining = document.querySelector(".lastResult");
 const lowOrHi = document.querySelector(".lowOrHi");
 const startOver = document.querySelector(".resultParas");
 
-//Defining variables
+const p = document.createElement("p");
+
 let prevGuess = [];
 let numGuess = 1;
 
-//Generally this var is used in Game. To check the user have coins to play the game or not
-//We can check this criteria before starting a game.
 let playGame = true;
 
+if (playGame) {
+  submit.addEventListener("click", function (e) {
+    e.preventDefault();
+    const guess = parseInt(userInput.value);
+    console.log(guess);
+    validateGuess(guess);
+  });
+}
+
 function validateGuess(guess) {
-  //this function will check if the userInput is valid or not
-  // isNaN(guess) || 0<guess<100
+  if (isNaN(guess)) {
+    alert("PLease enter a valid number");
+  } else if (guess < 1) {
+    alert("PLease enter a number more than 1");
+  } else if (guess > 100) {
+    alert("PLease enter a  number less than 100");
+  } else {
+    prevGuess.push(guess);
+    if (numGuess === 11) {
+      displayGuess(guess);
+      displayMessage(`Game Over. Random number was ${randomNumber}`);
+      endGame();
+    } else {
+      displayGuess(guess);
+      checkGuess(guess);
+    }
+  }
 }
 
 function checkGuess(guess) {
-  //this method will compare it with the number that has randomly generated.
+  if (guess === randomNumber) {
+    displayMessage(`You guessed it right`);
+    endGame();
+  } else if (guess < randomNumber) {
+    displayMessage(`Number is TOOO low`);
+  } else if (guess > randomNumber) {
+    displayMessage(`Number is TOOO High`);
+  }
 }
 
 function displayGuess(guess) {
-  //we will empty the guessField section.
-  //will do an innerHTML on guessSlot
-  //update the remaining
+  userInput.value = "";
+  guessSlot.innerHTML += `${guess}, `;
+  numGuess++;
+  remaining.innerHTML = `${11 - numGuess} `;
 }
 
 function displayMessage(message) {
-  //print a message accordingly lowOrHi
+  lowOrHi.innerHTML = `<h2>${message}</h2>`;
 }
 
 function endGame() {
-  //will end the game
+  userInput.value = "";
+  userInput.setAttribute("disabled", "");
+  p.classList.add("button");
+  p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+  startOver.appendChild(p);
+  playGame = false;
+  newGame();
 }
 
 function newGame() {
-  //will start a newGame
+  const newGameButton = document.querySelector("#newGame");
+  newGameButton.addEventListener("click", function (e) {
+    randomNumber = parseInt(Math.random() * 100 + 1);
+    prevGuess = [];
+    numGuess = 1;
+    guessSlot.innerHTML = "";
+    remaining.innerHTML = `${11 - numGuess} `;
+    userInput.removeAttribute("disabled");
+    startOver.removeChild(p);
+
+    playGame = true;
+  });
 }
