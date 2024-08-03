@@ -1,0 +1,163 @@
+/* General Body Style */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+/* Center align the "Meal App" heading */
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+/* Style for the search input and button */
+.form-control,
+.btn-primary {
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for search results */
+#results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.meal {
+  margin: 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.meal img {
+  border-bottom: 1px solid #ddd;
+  max-width: 150px;
+}
+
+/* Style for categories */
+#categories,
+#categories-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category {
+  flex: 1 0 21%;
+  max-width: 200px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.category img {
+  max-width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style for favorite meals */
+#favorites {
+  display: flex;
+  flex-direction: column;
+}
+
+#favorites .meal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#favorites .meal img {
+  max-width: 100px;
+  max-height: 75px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+/* Style for hamburger menu */
+#menu,
+#favorites-menu {
+  position: fixed;
+  top: 0;
+  width: 300px;
+  max-height: 80%;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  z-index: 1000;
+  border-radius: 0 0 10px 10px;
+}
+
+#menu {
+  left: 0;
+}
+
+#favorites-menu {
+  right: 0;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+/* Button positioning */
+#menu-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+}
+
+#favorites-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+/* Show Categories Button */
+#show-categories-btn {
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-body {
+    padding: 15px;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+
+  ul li {
+    font-size: 0.9rem;
+  }
+}
